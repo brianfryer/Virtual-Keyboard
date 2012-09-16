@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Page Title -->
+        <title>A Web-based, Virtual Keyboard by Brian Fryer</title>
+
+    <!-- Meta Data -->
+        <meta charset="UTF-8">
+
+    <!-- Stylesheet Links -->
+        <link rel="stylesheet" href="css/dark.css" type="text/css" />
+
+    <!-- Script Tags -->
+        <!-- Load jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <!-- Make HTML5 works in older browsers -->
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <!-- Toggle between different stylesheets -->
+        <script src="js/css-toggle.js"></script>
+        <!-- Input characters into the textarea when keys are clicked -->
+        <script src="js/keyboard.js"></script>
+
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <form>
+            <textarea id="screen" name="screen"></textarea>
+        </form>
+
+        <section id="keyboard">
+
+            <ul class="keys">
+                <li id="escape" class="short-key gap">
+                    <span>Esc</span>        							<!--  Escape  -->
+                </li>
+                <li id="f1" class="short-key">
+                    <span>F1</span>         							<!--  F1  -->
+                </li>
+                <li id="f2" class="short-key">
+                    <span>F2</span>         							<!--  F2  -->
+                </li>
+                <li id="f3" class="short-key">
+                    <span>F3</span>         							<!--  F3  -->
+                </li>
+                <li id="f4" class="short-key gap">
+                    <span>F4</span>         							<!--  F4  -->
+                </li>
+                <li id="f5" class="short-key">
+                    <span>F5</span>         							<!--  F5  -->
+                </li>
+                <li id="f6" class="short-key">
+                    <span>F6</span>         							<!--  F6  -->
+                </li>
+                <li id="f7" class="short-key">
+                    <span>F7</span>         							<!--  F7  -->
+                </li>
+                <li id="f8" class="short-key gap">
+                    <span>F8</span>         							<!--  F8  -->
+                </li>
+                <li id="f9" class="short-key">
+                    <span>F9</span>         							<!--  F9  -->
+                </li>
+                <li id="f10" class="short-key">
+                    <span>F10</span>        							<!--  F10  -->
+                </li>
+                <li id="f11" class="short-key">
+                    <span>F11</span>        							<!--  F11  -->
+                </li>
+                <li id="f12" class="short-key omega">
+                    <span>F12</span>        							<!--  F12  -->
+                </li>
+                <li id="accent tilde" class="double-character">
+                    <span>&#96;</span>      							<!--  `  -->
+                    <span>&#126;</span>     							<!--  ~  -->
+                </li>
+                <li id="num1 exclamation-mark" class="double-character">
+                    <span>1</span>          							<!--  1  -->
+                    <span>&#33;</span>      							<!--  !  -->
+                </li>
+                <li id="num2 at-symbol" class="double-character">
+                    <span>2</span>          							<!--  2  -->
+                    <span>&#64;</span>      							<!--  @  -->
+                </li>
+                <li id="num3 number-sign" class="double-character">
+                    <span>3</span>          							<!--  3  -->
+                    <span>&#35;</span>      							<!--  #  -->
+                </li>
+                <li id="num4 dollar-sign" class="double-character">
+                    <span>4</span>          							<!--  4  -->
+                    <span>&#36;</span>      							<!--  $  -->
+                </li>
+                <li id="num5 percent-sign" class="double-character">
+                    <span>5</span>          							<!--  5  -->
+                    <span>&#37;</span>      							<!--  %  -->
+                </li>
+                <li id="num6 caret" class="double-character">
+                    <span>6</span>          							<!--  6  -->
+                    <span>&#94;</span>      							<!--  ^  -->
+                </li>
+                <li id="num7 ampersand" class="double-character">
+                    <span>7</span>          							<!--  7  -->
+                    <span>&#38;</span>      							<!--  &  -->
+                </li>
+                <li id="num8 asterisk" class="double-character">
+                    <span>8</span>          							<!--  8  -->
+                    <span>&#42;</span>      							<!--  *  -->
+                </li>
+                <li id="num9 opening-paren" class="double-character">
+                    <span>9</span>          							<!--  9  -->
+                    <span>&#40;</span>      							<!--  (  -->
+                </li>
+                <li id="num0 closing-paren" class="double-character">
+                    <span>0</span>          							<!--  0  -->
+                    <span>&#41;</span>      							<!--  )  -->
+                </li>
+                <li id="hyphen underscore" class="double-character">
+                    <span>&#45;</span>      							<!--  -  -->
+                    <span>&#95;</span>      							<!--  _  -->
+                </li>
+                <li id="equal plus" class="double-character">
+                    <span>&#61;</span>      							<!--  =  -->
+                    <span>&#43;</span>      							<!--  +  -->
+                </li>
+                <li id="backspace" class="modifier omega">
+                    <span>Backspace</span>  							<!--  Backspace  -->
+                </li>
+                <li id="tab" class="modifier">
+                    <span>Tab</span>        							<!--  Tab  -->
+                </li>
+                <li id="q">
+                    <span>q</span>          							<!--  q  -->
+                </li>
+                <li id="w">
+                    <span>w</span>          							<!--  w  -->
+                </li>
+                <li id="e">
+                    <span>e</span>          							<!--  e  -->
+                </li>
+                <li id="r">
+                    <span>r</span>          							<!--  r  -->
+                </li>
+                <li id="t">
+                    <span>t</span>          							<!--  t  -->
+                </li>
+                <li id="y">
+                    <span>y</span>          							<!--  y  -->
+                </li>
+                <li id="u">
+                    <span>u</span>          							<!--  u  -->
+                </li>
+                <li id="i">
+                    <span>i</span>          							<!--  i  -->
+                </li>
+                <li id="o">
+                    <span>o</span>          							<!--  o  -->
+                </li>
+                <li id="p">
+                    <span>p</span>          							<!--  p  -->
+                </li>
+                <li id="opening-bracket opening-brace" class="double-character">
+                    <span>&#91;</span>      							<!--  [  -->
+                    <span>&#123;</span>     							<!--  {  -->
+                </li>
+                <li id="closing-bracket closing-brace" class="double-character">
+                    <span>&#93;</span>      							<!--  [  -->
+                    <span>&#125;</span>     							<!--  {  -->
+                </li>
+                <li id="backslash vertical-bar" class="double-character omega">
+                    <span>&#92;</span>      							<!--  \  -->
+                    <span>&#124;</span>     							<!--  |  -->
+                </li>
+                <li id="caps-lock" class="modifier">
+                    <span>Caps Lock</span>  							<!--  Caps Lock  -->
+                </li>
+                <li id="a">
+                    <span>a</span>          							<!--  a  -->
+                </li>
+                <li id="s">
+                    <span>s</span>          							<!--  s  -->
+                </li>
+                <li id="d">
+                    <span>d</span>          							<!--  d  -->
+                </li>
+                <li id="f">
+                    <span>f</span>          							<!--  f  -->
+                </li>
+                <li id="g">
+                    <span>g</span>          							<!--  g  -->
+                </li>
+                <li id="h">
+                    <span>h</span>          							<!--  h  -->
+                </li>
+                <li id="j">
+                    <span>j</span>          							<!--  j  -->
+                </li>
+                <li id="k">
+                    <span>k</span>          							<!--  k  -->
+                </li>
+                <li id="l">
+                    <span>l</span>          							<!--  l  -->
+                </li>
+                <li id="semi-colon colon" class="double-character">
+                    <span>&#59;</span>      							<!--  ;  -->
+                    <span>&#58;</span>      							<!--  :  -->
+                </li>
+                <li id="quote double-quote" class="double-character">
+                    <span>&#39;</span>      							<!--  '  -->
+                    <span>&#34;</span>      							<!--  "  -->
+                </li>
+                <li id="enter" class="modifier omega">
+                    <span>Enter</span>      							<!--  Enter  -->
+                </li>
+                <li id="left-shift" class="modifier">
+                    <span>Shift</span>      							<!--  Shift (left-side)  -->
+                </li>
+                <li id="z">
+                    <span>z</span>          							<!--  z  -->
+                </li>
+                <li id="x">
+                    <span>x</span>          							<!--  x  -->
+                </li>
+                <li id="c">
+                    <span>c</span>          							<!--  c  -->
+                </li>
+                <li id="v">
+                    <span>v</span>          							<!--  v  -->
+                </li>
+                <li id="b">
+                    <span>b</span>          							<!--  b  -->
+                </li>
+                <li id="n">
+                    <span>n</span>          							<!--  n  -->
+                </li>
+                <li id="m">
+                    <span>m</span>          							<!--  m  -->
+                </li>
+                <li id="comma less-than-sign" class="double-character">
+                    <span>&#46;</span>      							<!--  ,  -->
+                    <span>&#60;</span>      							<!--  <  -->
+                </li>
+                <li id="period greater-than-sign" class="double-character">
+                    <span>&#44;</span>      							<!--  .  -->
+                    <span>&#62;</span>      							<!--  >  -->
+                </li>
+                <li id="forward-slash question-mark" class="double-character">
+                    <span>&#47;</span>      							<!--  /  -->
+                    <span>&#63;</span>      							<!--  ?  -->
+                </li>
+                <li id="right-shift" class="modifier omega">
+                    <span>Shift</span>      							<!--  Shift (right-side)  -->
+                </li>
+                <li id="left-ctrl" class="modifier">
+                    <span>Ctrl</span>       							<!--  Ctrl (left-side)  -->
+                </li>
+                <li id="left-windows-key">
+                    <span></span>           							<!--  Windows Key (left-side)  -->
+                </li>
+                <li id="left-alt" class="modifier">
+                    <span>Alt</span>        							<!--  Alt (left-side)  -->
+                </li>
+                <li id="space-bar">
+                    <span></span>           							<!--  Space Bar  -->
+                </li>
+                <li id="right-alt" class="modifier">
+                    <span>Alt</span>        							<!--  Alt (right-side)  -->
+                </li>
+                <li id="right-windows-key">
+                    <span></span>           							<!--  Windows Key (right-side)  -->
+                </li>
+                <li id="right-ctrl" class="modifier omega">
+                    <span>Ctrl</span>       							<!--  Ctrl (right-side)  -->
+                </li>
+            </ul><!-- .keys -->
+
+            <ul class="toggle-css">
+                <li id="dark-css">Dark</li>
+                <li id="light-css">Light</li>
+                <li id="high-contrast-css">High Contrast</li>
+            </ul><!-- .toggle-css -->
+
+        </section><!-- #keyboard -->
+
+    </div><!-- #wrapper -->
+
+</body>
+</html>
