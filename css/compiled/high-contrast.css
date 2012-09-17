@@ -1,0 +1,75 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* ==========================================================================
+   Styling for High-Contrast Keyboard
+   ========================================================================== */
+#keyboard {
+  color: #fff;
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -ms-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: linear-gradient(top, #eeeeee, #dddddd);
+  -webkit-box-shadow: inset 0 0 5px 0 #999999, 0 3px 5px #777777;
+  box-shadow: inset 0 0 5px 0 #999999, 0 3px 5px #777777; }
+
+.keys > li {
+  border-color: #000;
+  border-top-color: #555;
+  background-color: #383838;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #383838), color-stop(100%, #2e2e2e));
+  background-image: -webkit-linear-gradient(top, #383838, #2e2e2e);
+  background-image: -moz-linear-gradient(top, #383838, #2e2e2e);
+  background-image: -ms-linear-gradient(top, #383838, #2e2e2e);
+  background-image: -o-linear-gradient(top, #383838, #2e2e2e);
+  background-image: linear-gradient(top, #383838, #2e2e2e);
+  -webkit-box-shadow: 0 2px 4px 0 black, inset 0 -1px 1px 0 #151515, inset 0 -2px 2px 0 #151515, inset 0 0 10px 0 #4c4c4c, inset 0 0 15px 0 #3c3c3c;
+  box-shadow: 0 2px 4px 0 black, inset 0 -1px 1px 0 #151515, inset 0 -2px 2px 0 #151515, inset 0 0 10px 0 #4c4c4c, inset 0 0 15px 0 #3c3c3c; }
+
+.keys > li:hover {
+  background-color: #484848;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #484848), color-stop(100%, #3c3c3c));
+  background-image: -webkit-linear-gradient(top, #484848, #3c3c3c);
+  background-image: -moz-linear-gradient(top, #484848, #3c3c3c);
+  background-image: -ms-linear-gradient(top, #484848, #3c3c3c);
+  background-image: -o-linear-gradient(top, #484848, #3c3c3c);
+  background-image: linear-gradient(top, #484848, #3c3c3c); }
+
+.keys > li > span {
+  text-shadow: 0 0 1px #111111, 0 0 2px #222222, 0 0 3px #333333; }
+
+.keys > li:hover > span {
+  color: #fff; }
+
+li.short-key,
+li.modifier,
+.double-character > span:last-of-type {
+  color: #999; }
+
+ul.toggle-css > li {
+  cursor: pointer;
+  color: #555;
+  text-shadow: inset 0 1px 0 #fff;
+  border-color: #8f8f8f;
+  border-top-color: #eee;
+  border-left-color: #eee;
+  background-color: #bbb; }
+
+.toggle-css > li:hover {
+  color: #666;
+  background-color: #ccc; }
+
+ul.toggle-css > li > i {
+  border-color: #555;
+  background-color: #666; }
+
+li#high-contrast-css > i {
+  border: 1px solid #38B449;
+  background-color: #F8ED31;
+  -webkit-box-shadow: 0 0 4px 0 #f8ed31;
+  box-shadow: 0 0 4px 0 #f8ed31; }
