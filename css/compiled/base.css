@@ -21,13 +21,7 @@ body {
     clear: both; }
 
 #screen {
-  display: block;
-  float: left;
-  margin-right: 2.35765%;
-  width: 100%;
-  margin: 40px 0; }
-  #screen:last-child {
-    margin-right: 0; }
+  margin: 40px 0 10px; }
 
 #screen textarea {
   width: 100%;
@@ -47,16 +41,75 @@ body {
   box-shadow: inset 0 0 10px 0 #999999; }
 
 #keyboard {
-  display: block;
-  float: left;
-  margin-right: 2.35765%;
-  width: 100%;
-  margin-right: 0;
   padding: 15px;
   border-radius: 8px;
   font-weight: bold; }
-  #keyboard:last-child {
-    margin-right: 0; }
 
-ul.keys {
-  width: 100%; }
+#keyboard > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  zoom: 1; }
+  #keyboard > ul:before, #keyboard > ul:after {
+    content: "";
+    display: table; }
+  #keyboard > ul:after {
+    clear: both; }
+
+.keys > li {
+  float: left;
+  width: 57px;
+  height: 57px;
+  margin: 3px;
+  border-radius: 5px; }
+
+li.alpha {
+  clear: left; }
+
+li.omega {
+  margin-right: 0; }
+
+li.short-key {
+  height: 40px; }
+
+li.gap {
+  margin-right: 41px; }
+
+.modifier {
+  font-size: 80%; }
+
+#backspace {
+  width: 108px; }
+
+#tab {
+  width: 83px; }
+
+#backslash {
+  width: 82px; }
+
+#caps-lock {
+  width: 108px; }
+
+#enter {
+  width: 120px; }
+
+#left-shift {
+  width: 145px; }
+
+#right-shift {
+  width: 146px; }
+
+#left-ctrl,
+#right-ctrl {
+  width: 83px; }
+
+#left-alt,
+#right-alt {
+  width: 83px; }
+
+#left-windows-key,
+#right-windows-key {
+  width: 83px; }
+
+#space-bar {
+  width: 393px; }

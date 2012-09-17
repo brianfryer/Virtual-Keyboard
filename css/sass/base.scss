@@ -12,8 +12,7 @@ body {
 }
 
 #screen {
-  @include span-columns(12);
-  margin: 40px 0;
+  margin: 40px 0 10px;
 }
 #screen textarea {
   width: 100%;
@@ -27,13 +26,86 @@ body {
 }
 
 #keyboard {
-  @include span-columns(12);
-  @include omega();
   @include pad(15px);
   border-radius: 8px;
   font-weight: bold;
 }
+#keyboard > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  @include clearfix;
+}
 
 ul.keys {
-  width: 100%;
+
+}
+.keys > li {
+  float: left;
+  width: 57px;
+  height: 57px;
+  margin: 3px;
+  border-radius: 5px;
+}
+li.alpha {
+  clear: left;
+}
+li.omega {
+  @include omega;
+}
+
+li.short-key {
+  height: 40px;
+}
+li.gap {
+  margin-right: 41px;
+}
+.modifier {
+  font-size: 80%;
+}
+.double-character {
+
+}
+.double-character > span:first-of-type {
+
+}
+.double-character > span:last-of-type {
+
+}
+
+#backspace {
+  width: 108px;
+}
+#tab {
+  width: 83px;
+}
+#backslash {
+  width: 82px;
+}
+#caps-lock {
+  width: 108px;
+}
+#enter {
+  width: 120px;
+}
+#left-shift {
+  width: 145px;
+}
+#right-shift {
+  width: 146px;
+}
+#left-ctrl,
+#right-ctrl {
+  width: 83px;
+}
+#left-alt,
+#right-alt {
+  width: 83px;
+}
+#left-windows-key,
+#right-windows-key {
+  width: 83px;
+}
+#space-bar {
+  width: 393px;
 }

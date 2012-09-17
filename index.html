@@ -9,7 +9,6 @@
         <meta charset="UTF-8">
 
     <!-- Stylesheet Links -->
-        <link rel="stylesheet" href="css/compiled/base.css" type="text/css" />
         <link rel="stylesheet" href="css/compiled/dark.css" type="text/css" id="change-me" />
         <link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
 
@@ -37,7 +36,7 @@
         <section id="keyboard">
 
             <ul class="keys">
-                <li id="escape" class="short-key gap">
+                <li id="escape" class="short-key alpha gap">
                     <span>Esc</span>        							<!--  Escape  -->
                 </li>
                 <li id="f1" class="short-key">
@@ -76,62 +75,62 @@
                 <li id="f12" class="short-key omega">
                     <span>F12</span>        							<!--  F12  -->
                 </li>
-                <li id="accent tilde" class="double-character">
+                <li id="accent" class="double-character alpha">
                     <span>&#96;</span>      							<!--  `  -->
-                    <span>&#126;</span>     							<!--  ~  -->
+                    <span id="tilde">&#126;</span>     							<!--  ~  -->
                 </li>
-                <li id="num1 exclamation-mark" class="double-character">
+                <li id="num1" class="double-character">
                     <span>1</span>          							<!--  1  -->
-                    <span>&#33;</span>      							<!--  !  -->
+                    <span id="exclamation-mark">&#33;</span>      							<!--  !  -->
                 </li>
-                <li id="num2 at-symbol" class="double-character">
+                <li id="num2" class="double-character">
                     <span>2</span>          							<!--  2  -->
-                    <span>&#64;</span>      							<!--  @  -->
+                    <span id="at-symbol">&#64;</span>      							<!--  @  -->
                 </li>
-                <li id="num3 number-sign" class="double-character">
+                <li id="num3" class="double-character">
                     <span>3</span>          							<!--  3  -->
-                    <span>&#35;</span>      							<!--  #  -->
+                    <span id="number-sign">&#35;</span>      							<!--  #  -->
                 </li>
-                <li id="num4 dollar-sign" class="double-character">
+                <li id="num4" class="double-character">
                     <span>4</span>          							<!--  4  -->
-                    <span>&#36;</span>      							<!--  $  -->
+                    <span id="dollar-sign">&#36;</span>      							<!--  $  -->
                 </li>
-                <li id="num5 percent-sign" class="double-character">
+                <li id="num5" class="double-character">
                     <span>5</span>          							<!--  5  -->
-                    <span>&#37;</span>      							<!--  %  -->
+                    <span id="percent-sign">&#37;</span>      							<!--  %  -->
                 </li>
-                <li id="num6 caret" class="double-character">
+                <li id="num6" class="double-character">
                     <span>6</span>          							<!--  6  -->
-                    <span>&#94;</span>      							<!--  ^  -->
+                    <span id="caret">&#94;</span>      							<!--  ^  -->
                 </li>
-                <li id="num7 ampersand" class="double-character">
+                <li id="num7" class="double-character">
                     <span>7</span>          							<!--  7  -->
-                    <span>&#38;</span>      							<!--  &  -->
+                    <span id="ampersand">&#38;</span>      							<!--  &  -->
                 </li>
-                <li id="num8 asterisk" class="double-character">
+                <li id="num8" class="double-character">
                     <span>8</span>          							<!--  8  -->
-                    <span>&#42;</span>      							<!--  *  -->
+                    <span id="asterisk">&#42;</span>      							<!--  *  -->
                 </li>
-                <li id="num9 opening-paren" class="double-character">
+                <li id="num9" class="double-character">
                     <span>9</span>          							<!--  9  -->
-                    <span>&#40;</span>      							<!--  (  -->
+                    <span id="opening-paren">&#40;</span>      							<!--  (  -->
                 </li>
-                <li id="num0 closing-paren" class="double-character">
+                <li id="num0" class="double-character">
                     <span>0</span>          							<!--  0  -->
-                    <span>&#41;</span>      							<!--  )  -->
+                    <span id="closing-paren">&#41;</span>      							<!--  )  -->
                 </li>
-                <li id="hyphen underscore" class="double-character">
+                <li id="hyphen" class="double-character">
                     <span>&#45;</span>      							<!--  -  -->
-                    <span>&#95;</span>      							<!--  _  -->
+                    <span id="underscore">&#95;</span>      							<!--  _  -->
                 </li>
-                <li id="equal plus" class="double-character">
+                <li id="equal" class="double-character">
                     <span>&#61;</span>      							<!--  =  -->
-                    <span>&#43;</span>      							<!--  +  -->
+                    <span id="plus">&#43;</span>      							<!--  +  -->
                 </li>
                 <li id="backspace" class="modifier omega">
                     <span>Backspace</span>  							<!--  Backspace  -->
                 </li>
-                <li id="tab" class="modifier">
+                <li id="tab" class="modifier alpha">
                     <span>Tab</span>        							<!--  Tab  -->
                 </li>
                 <li id="q">
@@ -164,19 +163,19 @@
                 <li id="p">
                     <span>p</span>          							<!--  p  -->
                 </li>
-                <li id="opening-bracket opening-brace" class="double-character">
+                <li id="opening-bracket" class="double-character">
                     <span>&#91;</span>      							<!--  [  -->
-                    <span>&#123;</span>     							<!--  {  -->
+                    <span id="opening-brace">&#123;</span>     							<!--  {  -->
                 </li>
-                <li id="closing-bracket closing-brace" class="double-character">
+                <li id="closing-bracket" class="double-character">
                     <span>&#93;</span>      							<!--  [  -->
-                    <span>&#125;</span>     							<!--  {  -->
+                    <span id="closing-brace">&#125;</span>     							<!--  {  -->
                 </li>
-                <li id="backslash vertical-bar" class="double-character omega">
+                <li id="backslash" class="double-character omega">
                     <span>&#92;</span>      							<!--  \  -->
-                    <span>&#124;</span>     							<!--  |  -->
+                    <span id="vertical-bar">&#124;</span>     							<!--  |  -->
                 </li>
-                <li id="caps-lock" class="modifier">
+                <li id="caps-lock" class="modifier alpha">
                     <span>Caps Lock</span>  							<!--  Caps Lock  -->
                 </li>
                 <li id="a">
@@ -206,18 +205,18 @@
                 <li id="l">
                     <span>l</span>          							<!--  l  -->
                 </li>
-                <li id="semi-colon colon" class="double-character">
+                <li id="semi-colon" class="double-character">
                     <span>&#59;</span>      							<!--  ;  -->
-                    <span>&#58;</span>      							<!--  :  -->
+                    <span id="colon">&#58;</span>      							<!--  :  -->
                 </li>
-                <li id="quote double-quote" class="double-character">
+                <li id="quote" class="double-character">
                     <span>&#39;</span>      							<!--  '  -->
-                    <span>&#34;</span>      							<!--  "  -->
+                    <span id="double-quote">&#34;</span>      							<!--  "  -->
                 </li>
                 <li id="enter" class="modifier omega">
                     <span>Enter</span>      							<!--  Enter  -->
                 </li>
-                <li id="left-shift" class="modifier">
+                <li id="left-shift" class="modifier alpha">
                     <span>Shift</span>      							<!--  Shift (left-side)  -->
                 </li>
                 <li id="z">
@@ -241,22 +240,22 @@
                 <li id="m">
                     <span>m</span>          							<!--  m  -->
                 </li>
-                <li id="comma less-than-sign" class="double-character">
+                <li id="comma" class="double-character">
                     <span>&#46;</span>      							<!--  ,  -->
-                    <span>&#60;</span>      							<!--  <  -->
+                    <span id="less-than-sign">&#60;</span>      							<!--  <  -->
                 </li>
-                <li id="period greater-than-sign" class="double-character">
+                <li id="period" class="double-character">
                     <span>&#44;</span>      							<!--  .  -->
-                    <span>&#62;</span>      							<!--  >  -->
+                    <span id="greater-than-sign">&#62;</span>      							<!--  >  -->
                 </li>
-                <li id="forward-slash question-mark" class="double-character">
+                <li id="forward-slash" class="double-character">
                     <span>&#47;</span>      							<!--  /  -->
-                    <span>&#63;</span>      							<!--  ?  -->
+                    <span id="question-mark">&#63;</span>      							<!--  ?  -->
                 </li>
                 <li id="right-shift" class="modifier omega">
                     <span>Shift</span>      							<!--  Shift (right-side)  -->
                 </li>
-                <li id="left-ctrl" class="modifier">
+                <li id="left-ctrl" class="modifier alpha">
                     <span>Ctrl</span>       							<!--  Ctrl (left-side)  -->
                 </li>
                 <li id="left-windows-key">
