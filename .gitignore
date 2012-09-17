@@ -1,1 +1,7 @@
+# Ignore files from IDE
 .idea
+
+# Ignore files from SASS, Bourbon, and Neat
+css/.sass-cache
+css/sass/bourbon
+css/sass/neat

@@ -2,16 +2,16 @@
 
 $(document).ready(function() {
 
-	$("#dark-css").click(function() {
-		$("link[rel=stylesheet]").attr({href : "css/dark.css"});
+    $("#dark-css").click(function() {
+		$("link#change-me").attr({href : "css/compiled/dark.css"});
 	});
 
 	$("#light-css").click(function() {
-		$("link[rel=stylesheet]").attr({href : "css/light.css"});
+        $("link#change-me").attr({href : "css/compiled/light.css"});
 	});
 
     $("#high-contrast-css").click(function() {
-        $("link[rel=stylesheet]").attr({href : "css/high-contrast.css"});
+        $("link#change-me").attr({href : "css/compiled/high-contrast.css"});
     });
 
 });

@@ -1,0 +1,39 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+body {
+  background: #eee;
+  font-family: $helvetica;
+}
+
+.wrapper {
+  @include outer-container;
+  max-width: 960px;
+}
+
+#screen {
+  @include span-columns(12);
+  margin: 40px 0;
+}
+#screen textarea {
+  width: 100%;
+  min-height: 200px;
+  @include pad(10px);
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  color: #444;
+  @include linear-gradient(#fff, #f5f5f5);
+  @include box-shadow(inset 0 0 10px 0 #999);
+}
+
+#keyboard {
+  @include span-columns(12);
+  @include omega();
+  @include pad(15px);
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+ul.keys {
+  width: 100%;
+}
