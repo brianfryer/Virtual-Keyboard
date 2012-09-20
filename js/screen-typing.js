@@ -3,11 +3,11 @@
 
 $(document).ready(function() {
 
-// Find the textarea, save it to var screen, and focus the cursor on it
+    // Find the textarea, save it to var screen, and focus the cursor on it
     var screen = $("#screen > textarea");
     screen.focus();
 
-// Listen for when a (non-modifier, or non-function) key is clicked
+    // Listen for when a (non-modifier, or non-function) key is clicked
     $('li').not('.modifier, .short-key').click(function() {
 
         // Find the first <span>, get the contents, trim away the whitespace, and save it to var txt
@@ -38,7 +38,7 @@ $(document).ready(function() {
                         this.value += character;
                         this.focus();
                     }
-                })
+                });
             }
         });
 
@@ -46,11 +46,22 @@ $(document).ready(function() {
         screen.insertAtCaret(character);
     });
 
+    // Get the value of the key being pressed and make sure it's lower case
+    function getCharacter(event) {
+
+        code = event.keyCode;
+
+        if ((code >= 65) && (code <= 90)) {
+            return (String.fromCharCode(code)).toLowerCase();
+        } else {
+            console.log(code);
+        }
+    }
+
     $(document).on({
         // Do this when a key is pressed
-        'keydown': function(event){
-            // Get the value of the key being pressed and make sure it's lower case
-            key = (String.fromCharCode(event.keyCode)).toLowerCase();
+        'keydown': function(event) {
+            var key = getCharacter(event);
             // Make the on-screen key flash for 100ms
             $('#' + key).addClass('hover');
             // Focus on the textarea
@@ -58,8 +69,7 @@ $(document).ready(function() {
         },
         // Do this when a key is let go
         'keyup': function(event) {
-            // Get the value of the key being pressed
-            key = String.fromCharCode(event.keyCode).toLowerCase();
+            var key = getCharacter(event);
             // After a key is clicked, remove the .hover class
             $('#' + key).removeClass('hover').delay(100);
         }
