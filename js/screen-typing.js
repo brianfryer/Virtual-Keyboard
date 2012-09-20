@@ -61,20 +61,57 @@ $(document).ready(function() {
         pressedKey = target.keyCode;
         // If the keyCode is letter...
         if ((pressedKey >= 65) && (pressedKey <= 90)) {
-            // ...return the letter in lower case format
             return (String.fromCharCode(pressedKey)).toLowerCase();
         }
         // If the keyCode is a number...
         else if ((pressedKey >=48) && (pressedKey <= 57)) {
-            // ...return the number as string
             return (String.fromCharCode(pressedKey))
         }
         // If the pressedKey is an accent `
         else if (pressedKey == 192) {
-            // ...return the word "accent"
             return 'accent';
         }
-        //
+        // If the pressedKey is a hyphen -
+        else if (pressedKey == 189) {
+            return 'hyphen';
+        }
+        // If the pressedKey is an equals sign =
+        else if (pressedKey == 187) {
+            return 'equal';
+        }
+        // If the pressedKey is an opening bracket [
+        else if (pressedKey == 219) {
+            return 'opening-bracket';
+        }
+        // If the pressedKey is a closing bracket ]
+        else if (pressedKey == 221) {
+            return 'closing-bracket';
+        }
+        // If the pressedKey is a backslash \
+        else if (pressedKey == 220) {
+            return 'backslash';
+        }
+        // If the pressedKey is semi-colon ;
+        else if (pressedKey == 186) {
+            return 'semi-colon';
+        }
+        // If the pressedKey is a quotation mark '
+        else if (pressedKey == 222) {
+            return 'quote';
+        }
+        // If the pressedKey is a comma ,
+        else if (pressedKey == 188) {
+            return 'comma';
+        }
+        // If the pressedKey is a period .
+        else if (pressedKey == 190) {
+            return 'period';
+        }
+        // If the pressedKey is a forward slash /
+        else if (pressedKey == 191) {
+            return 'forward-slash';
+        }
+        // If the pressedKey doesn't match anything above, output to the console!
         else {
             console.log(pressedKey);
         }
