@@ -69,21 +69,31 @@ $(document).ready(function() {
             // ...return the number as string
             return (String.fromCharCode(pressedKey))
         }
-        //
-        else if (pressedKey == 16) {
-            //$('.keys').addClass('uppercase');
+        // If the pressedKey is an accent `
+        else if (pressedKey == 192) {
+            // ...return the word "accent"
+            return 'accent';
         }
         //
         else {
             console.log(pressedKey);
         }
     }
+    // Find out if the key is a number
+    function isNumber(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
     $(document).on({
         // Do this when a key is pressed
         'keydown': function(event) {
             key = getPressedKey(event);
             // Make the on-screen key flash for 100ms
-            $('#' + key).addClass('hover');
+            if (isNumber(key)) {
+                $('#num' + key).addClass('hover');
+            }
+            else {
+                $('#' + key).addClass('hover');
+            }
             // Focus on the textarea
             $('#screen > textarea').focus();
 
