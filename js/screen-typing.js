@@ -1,7 +1,116 @@
-// "press" = you used your physical keyboard
-// "clicked" = you used your mouse to click the on-screen keyboard
-
 $(document).ready(function() {
+
+    // When the document loads, find the textarea, save it, and give it focus
+    var screen = $("#screen > textarea");
+    screen.focus();
+
+    // On-screen keyboard mouse click
+    $('li').not('.modifier, .short-key').on({
+        // When a letter or number is clicked...
+        'click': function() {
+            // Get the key
+            key = getClickedKey(this);
+            // Insert its character in the textarea at the caret
+            screen.insertAtCaret(key);
+        }
+    });
+
+    // Physical keyboard key press
+    $(document).on({
+
+        // When a key is pressed...
+        'keydown': function(event) {
+            // Get the pressedKey
+            key = getPressedKey(event);
+            // Make the on-screen key flash for 100ms
+            switch(key) {
+                case isNumber(key):
+                    $('#num' + key).addClass('hover');
+                default:
+                    $('#' + key).addClass('hover');
+            }
+            // If the pressed key is...
+            switch(key) {
+                case 'shift':
+                    // Make the letters uppercase
+                    $('.keys').addClass('uppercase');
+                    // Make both shift keys flash
+                    $('#left-shift, #right-shift').addClass('hover');
+                    break;
+                case 'ctrl':
+                    // Make both shift keys flash
+                    $('#left-ctrl, #right-ctrl').addClass('hover');
+                    break;
+                case 'alt':
+                    // Make both shift keys flash
+                    $('#left-alt, #right-alt').addClass('hover');
+                    break;
+            }
+            // Prevent auto-focus on textarea if shift, ctrl, alt, capslock, or esc is clicked
+            switch (key) {
+                case 'shift': case 'ctrl': case 'alt': case 'caps-lock': case 'escape':
+                break;
+                default:
+                    // Focus on the textarea
+                    $('#screen > textarea').focus();
+            }
+        },
+        // When a key is no longer pressed...
+        'keyup': function(event) {
+            // Get the unpressedKey
+            key = getPressedKey(event);
+            // Remove the hover class from all non-modifier elements (this prevents "sticky hover")
+            setTimeout(function() {
+                $('*').not('.modifier').removeClass('hover');
+            }, 100);
+
+            // If the key that is no longer pressed is...
+            switch(key) {
+                case 'shift':
+                    // Remove the hover class from both shift keys
+                    setTimeout(function() {
+                        $('#left-shift, #right-shift').removeClass('hover');
+                    }, 100);
+                    // Make the letters go back to lowercase
+                    $('.keys').removeClass('uppercase');
+                    break;
+                case 'ctrl':
+                    // Remove the hover class from both ctrl keys
+                    setTimeout(function() {
+                        $('#left-ctrl, #right-ctrl').removeClass('hover');
+                    }, 100);
+                    break;
+                case 'alt':
+                    // Remove the hover class from both alt keys
+                    setTimeout(function() {
+                        $('#left-alt, #right-alt').removeClass('hover');
+                    }, 100);
+                    break;
+                case 'escape':
+                    setTimeout(function() {
+                        $('#escape').removeClass('hover');
+                    }, 100);
+                    break;
+                case 'caps-lock':
+                    setTimeout(function() {
+                        $('#caps-lock').removeClass('hover');
+                    }, 100);
+                    break;
+                case 'enter':
+                    setTimeout(function() {
+                        $('#enter').removeClass('hover');
+                    }, 100);
+                    break;
+            }
+        }
+    });
+
+    // Get the value of the key being clicked
+    function getClickedKey(target) {
+        // Find the first <span>, get the contents, trim away the whitespace, and save it
+        clickedKey = $(target).find(':first-child').text().trim();
+        return clickedKey;
+    }
 
     // Extend jQuery to insert characters at the caret
     jQuery.fn.extend({
@@ -32,33 +141,12 @@ $(document).ready(function() {
         }
     });
 
-    // Find the textarea, save it to var screen, and focus the cursor on it
-    var screen = $("#screen > textarea");
-    screen.focus();
-
-    // Get the value of the key being clicked, and make sure it's trimmed
-    function getClickedKey(target) {
-        // Look for the contents of the first <span>, and add it to pressedKey
-        clickedKey = $(target).find(':first-child').text().trim();
-        //
-        console.log(clickedKey);
-        //
-        return clickedKey;
-    }
-    // Listen for when a letter/number is clicked
-    $('li').not('.modifier, .short-key').on({
-        'click': function() {
-            // Find the first <span>, get the contents, trim away the whitespace, and save it to var character
-            character = getClickedKey(this);
-            // Insert characters in the textarea at the caret
-            screen.insertAtCaret(character);
-        }
-    });
-
     // Get the value of the key being pressed
     function getPressedKey(target) {
+
         // Look for the keyCode of the key being pressed
         pressedKey = target.keyCode;
+
         // If the keyCode is letter...
         if ((pressedKey >= 65) && (pressedKey <= 90)) {
             return (String.fromCharCode(pressedKey)).toLowerCase();
@@ -66,6 +154,10 @@ $(document).ready(function() {
         // If the keyCode is a number...
         else if ((pressedKey >=48) && (pressedKey <= 57)) {
             return (String.fromCharCode(pressedKey))
+        }
+        // If the pressedKey is esc
+        else if (pressedKey == 27) {
+            return 'escape';
         }
         // If the pressedKey is an accent `
         else if (pressedKey == 192) {
@@ -91,6 +183,10 @@ $(document).ready(function() {
         else if (pressedKey == 220) {
             return 'backslash';
         }
+        // If the pressedKey is an caps lock
+        else if (pressedKey == 20) {
+            return 'caps-lock';
+        }
         // If the pressedKey is semi-colon ;
         else if (pressedKey == 186) {
             return 'semi-colon';
@@ -98,6 +194,14 @@ $(document).ready(function() {
         // If the pressedKey is a quotation mark '
         else if (pressedKey == 222) {
             return 'quote';
+        }
+        // If the pressedKey is enter
+        else if (pressedKey == 13) {
+            return 'enter';
+        }
+        // If the pressedKey is shift
+        else if (pressedKey == 16) {
+            return 'shift';
         }
         // If the pressedKey is a comma ,
         else if (pressedKey == 188) {
@@ -111,50 +215,23 @@ $(document).ready(function() {
         else if (pressedKey == 191) {
             return 'forward-slash';
         }
+        // If the pressedKey is ctrl
+        else if (pressedKey == 17) {
+            return 'ctrl';
+        }
+        // If the pressedKey is alt
+        else if (pressedKey == 18) {
+            return 'alt';
+        }
         // If the pressedKey doesn't match anything above, output to the console!
         else {
             console.log(pressedKey);
         }
     }
+
     // Find out if the key is a number
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
-    $(document).on({
-        // Do this when a key is pressed
-        'keydown': function(event) {
-            key = getPressedKey(event);
-            // Make the on-screen key flash for 100ms
-            if (isNumber(key)) {
-                $('#num' + key).addClass('hover');
-            }
-            else {
-                $('#' + key).addClass('hover');
-            }
-            // Focus on the textarea
-            $('#screen > textarea').focus();
-
-            if (pressedKey == 16) {
-                $('.keys').addClass('uppercase');
-                $('#left-shift, #right-shift').addClass('hover');
-            }
-        },
-        // Do this when a key is let go
-        'keyup': function(event) {
-            key = getPressedKey(event);
-            // After a key is clicked, remove the .hover class
-            setTimeout(function() {
-                $('*').not('.modifier').removeClass('hover');
-            }, 100);
-            // If the shift key is let go...
-            if (pressedKey == 16) {
-                // ...remove the .hover and .uppercase classes
-                setTimeout(function() {
-                    $('#left-shift, #right-shift').removeClass('hover');
-                }, 100);
-                $('.keys').removeClass('uppercase');
-            }
-        }
-    });
 
 });
