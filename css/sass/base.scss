@@ -46,6 +46,9 @@ body {
 ul.keys {
   font-weight: bold;
 }
+.keys.uppercase {
+  text-transform: uppercase;
+}
 .keys > li {
   float: left;
   width: 57px;
@@ -54,7 +57,6 @@ ul.keys {
   border-radius: 5px;
   border: 1px solid transparent;
   border-left: none;
-  text-transform: uppercase;
 }
 li.alpha {
   clear: left;

@@ -65,6 +65,9 @@ body {
 ul.keys {
   font-weight: bold; }
 
+.keys.uppercase {
+  text-transform: uppercase; }
+
 .keys > li {
   float: left;
   width: 57px;
@@ -72,8 +75,7 @@ ul.keys {
   margin: 3px;
   border-radius: 5px;
   border: 1px solid transparent;
-  border-left: none;
-  text-transform: uppercase; }
+  border-left: none; }
 
 li.alpha {
   clear: left; }

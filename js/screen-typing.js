@@ -53,6 +53,8 @@ $(document).ready(function() {
 
         if ((code >= 65) && (code <= 90)) {
             return (String.fromCharCode(code)).toLowerCase();
+        } else if (code == 16) {
+            //$('.keys').addClass('uppercase');
         } else {
             console.log(code);
         }
@@ -66,12 +68,23 @@ $(document).ready(function() {
             $('#' + key).addClass('hover');
             // Focus on the textarea
             $('#screen > textarea').focus();
+
+            if (code == 16) {
+                $('.keys').addClass('uppercase');
+                $('#left-shift, #right-shift').addClass('hover');
+            }
+
         },
         // Do this when a key is let go
         'keyup': function(event) {
             var key = getCharacter(event);
             // After a key is clicked, remove the .hover class
-            $('#' + key).removeClass('hover').delay(100);
+            $('#' + key).removeClass('hover').delay(1000);
+
+            if (code == 16) {
+                $('.keys').removeClass('uppercase');
+                $('#left-shift, #right-shift').removeClass('hover');
+            }
         }
     });
 
