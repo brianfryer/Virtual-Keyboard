@@ -82,13 +82,13 @@ li.modifier {
 .keys span {
   cursor: default;
   display: block;
-  @include pad(10px 0 0 13px);
+  margin: 10px 0 0 13px;
 }
 li.double-character {
   font-size: 80%;
 }
 li.double-character > span {
-  @include pad(7px 0 0 9px);
+  margin: 7px 0 0 9px;
 }
 li.double-character > span:last-of-type {
   font-size: 80%;
