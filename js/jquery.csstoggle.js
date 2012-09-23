@@ -3,15 +3,15 @@
 $(document).ready(function() {
 
     $("#dark-css").click(function() {
-		$("link[title=css-toggle]").attr({href : "css/compiled/dark.css"});
+		$("link[title=css-toggle]").attr({href : "css/dark.css"});
 	});
 
 	$("#light-css").click(function() {
-        $("link[title=css-toggle]").attr({href : "css/compiled/light.css"});
+        $("link[title=css-toggle]").attr({href : "css/light.css"});
 	});
 
     $("#high-contrast-css").click(function() {
-        $("link[title=css-toggle]").attr({href : "css/compiled/high-contrast.css"});
+        $("link[title=css-toggle]").attr({href : "css/high-contrast.css"});
     });
 
 });

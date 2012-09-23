@@ -2,8 +2,9 @@
 @import "neat/neat";
 
 body {
-  font-family: $helvetica;
-  background-image: url("../../img/bg.png");
+  /*font-family: $helvetica;*/
+  font-family: 'Source Sans Pro';
+  background-image: url('./img/bg.png');
   background-position: top left;
   background-repeat: repeat;
 }
@@ -65,7 +66,7 @@ ul.keys {
 }
 
 li.function {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 li.function > span {
   cursor: default;
