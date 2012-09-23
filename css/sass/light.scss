@@ -21,8 +21,8 @@
     inset 0 0 10px 0 #f5f5f5,
     inset 0 0 15px 0 #fff);
 }
-.keys > li:hover,
-.keys > li.hover {
+.keys > li:hover:not(.function),
+.keys > li.hover:not(.function) {
   background: #EFECCE;
 }
 
@@ -32,8 +32,8 @@
   0 1px 1px #fafafa,
   0 -1px 1px #fafafa;
 }
-.keys > li:hover > span,
-.keys > li.hover > span {
+.keys > li:hover:not(.function) > span,
+.keys > li.hover:not(.function) > span {
   color: #4c4c4c;
 }
 

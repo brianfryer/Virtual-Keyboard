@@ -58,6 +58,19 @@ ul.keys {
   border: 1px solid transparent;
   border-left: none;
 }
+
+.keys > li:not(.function),
+.keys > li:not(.function) {
+  cursor: pointer;
+}
+
+li.function {
+  opacity: 0.7;
+}
+li.function > span {
+  cursor: default;
+}
+
 li.alpha {
   clear: left;
 }
@@ -80,7 +93,6 @@ li.modifier {
 }
 
 .keys span {
-  cursor: default;
   display: block;
   margin: 10px 0 0 13px;
 }

@@ -26,15 +26,15 @@
   -webkit-box-shadow: 0 2px 3px 0 #777777, 1px 0 0 0 #c5c5c5, -1px 0 0 0 #c5c5c5, inset 0 -1px 1px 0 #cccccc, inset 0 0 10px 0 whitesmoke, inset 0 0 15px 0 white;
   box-shadow: 0 2px 3px 0 #777777, 1px 0 0 0 #c5c5c5, -1px 0 0 0 #c5c5c5, inset 0 -1px 1px 0 #cccccc, inset 0 0 10px 0 whitesmoke, inset 0 0 15px 0 white; }
 
-.keys > li:hover,
-.keys > li.hover {
+.keys > li:hover:not(.function),
+.keys > li.hover:not(.function) {
   background: #EFECCE; }
 
 .keys > li > span {
   text-shadow: 1px 0 1px #fafafa, -1px 0 1px #fafafa, 0 1px 1px #fafafa, 0 -1px 1px #fafafa; }
 
-.keys > li:hover > span,
-.keys > li.hover > span {
+.keys > li:hover:not(.function) > span,
+.keys > li.hover:not(.function) > span {
   color: #4c4c4c; }
 
 li.short-key,
