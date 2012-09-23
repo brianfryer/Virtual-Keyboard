@@ -1,74 +1,4 @@
-<<<<<<< HEAD
 @import "bourbon/bourbon";
-@import "neat/neat";
-
-/* ==========================================================================
-   Styling for High-Contrast Keyboard
-   ========================================================================== */
-
-#keyboard {
-  color: #fff;
-  @include linear-gradient(#eee, #ddd);
-  @include box-shadow(inset 0 0 5px 0 #999, 0 3px 5px #777);
-}
-
-.keys > li {
-  border-color: #000;
-  border-top-color: #555;
-  @include linear-gradient(#383838, #2e2e2e);
-  @include box-shadow(0 2px 4px 0 #000,
-    inset 0 -1px 1px 0 #151515,
-    inset 0 -2px 2px 0 #151515,
-    inset 0 0 10px 0 #4c4c4c,
-    inset 0 0 15px 0 #3c3c3c);
-}
-.keys > li.hover,
-.keys > li:hover {
-  @include linear-gradient(#484848, #3c3c3c);
-}
-
-.keys > li > span {
-  text-shadow: 0 0 1px #111,
-  0 0 2px #222,
-  0 0 3px #333;
-}
-.keys > li.hover > span,
-.keys > li:hover > span {
-  color: #fff;
-}
-
-li.short-key,
-li.modifier,
-.double-character > span:last-of-type {
-  color: #999;
-}
-
-ul.toggle-css > li {
-  cursor: pointer;
-  color: #555;
-  text-shadow: inset 0 1px 0 #fff;
-  border-color: #8f8f8f;
-  border-top-color: #eee;
-  border-left-color: #eee;
-  background-color: #bbb;
-}
-.toggle-css > li:hover {
-  color: #666;
-  background-color: #ccc;
-}
-
-ul.toggle-css > li > i {
-  border-color: #555;
-  background-color: #666;
-}
-li#high-contrast-css > i {
-  border: 1px solid #38B449;
-  background-color: #F8ED31;
-  @include box-shadow(0 0 4px 0 #F8ED31);
-}
-=======
-@import "bourbon/bourbon";
-@import "neat/neat";
 
 /* ==========================================================================
    Styling for High-Contrast Keyboard
@@ -134,4 +64,3 @@ li#high-contrast-css > i {
   background-color: #F8ED31;
   @include box-shadow(0 0 4px 0 #F8ED31);
 }
->>>>>>> ...
