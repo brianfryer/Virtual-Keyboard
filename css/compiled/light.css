@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -69,3 +70,76 @@ li#light-css > i {
   background-color: #F8ED31;
   -webkit-box-shadow: 0 0 4px 0 #f8ed31;
   box-shadow: 0 0 4px 0 #f8ed31; }
+=======
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* ==========================================================================
+   Styling for Light Keyboard
+   ========================================================================== */
+#keyboard {
+  color: #666;
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -ms-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: linear-gradient(top, #eeeeee, #dddddd);
+  -webkit-box-shadow: inset 0 0 5px 0 #999999, 0 3px 5px #777777;
+  box-shadow: inset 0 0 5px 0 #999999, 0 3px 5px #777777; }
+
+.keys > li {
+  border-color: #d5d5d5;
+  border-bottom-color: #aaa;
+  background-color: #fefefe;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, whitesmoke));
+  background-image: -webkit-linear-gradient(top, #fefefe, whitesmoke);
+  background-image: -moz-linear-gradient(top, #fefefe, whitesmoke);
+  background-image: -ms-linear-gradient(top, #fefefe, whitesmoke);
+  background-image: -o-linear-gradient(top, #fefefe, whitesmoke);
+  background-image: linear-gradient(top, #fefefe, whitesmoke);
+  -webkit-box-shadow: 0 2px 3px 0 #777777, 1px 0 0 0 #c5c5c5, -1px 0 0 0 #c5c5c5, inset 0 -1px 1px 0 #cccccc, inset 0 0 10px 0 whitesmoke, inset 0 0 15px 0 white;
+  box-shadow: 0 2px 3px 0 #777777, 1px 0 0 0 #c5c5c5, -1px 0 0 0 #c5c5c5, inset 0 -1px 1px 0 #cccccc, inset 0 0 10px 0 whitesmoke, inset 0 0 15px 0 white; }
+
+.keys > li:hover,
+.keys > li.hover {
+  background: #EFECCE; }
+
+.keys > li > span {
+  text-shadow: 1px 0 1px #fafafa, -1px 0 1px #fafafa, 0 1px 1px #fafafa, 0 -1px 1px #fafafa; }
+
+.keys > li:hover > span,
+.keys > li.hover > span {
+  color: #4c4c4c; }
+
+li.short-key,
+li.modifier,
+.double-character > span:last-of-type {
+  color: #999; }
+
+ul.toggle-css > li {
+  cursor: pointer;
+  color: #555;
+  text-shadow: inset 0 1px 0 #fff;
+  border-color: #8f8f8f;
+  border-top-color: #eee;
+  border-left-color: #eee;
+  background-color: #bbb; }
+
+.toggle-css > li:hover {
+  color: #666;
+  background-color: #ccc; }
+
+ul.toggle-css > li > i {
+  border-color: #555;
+  background-color: #666; }
+
+li#light-css > i {
+  border: 1px solid #38B449;
+  background-color: #F8ED31;
+  -webkit-box-shadow: 0 0 4px 0 #f8ed31;
+  box-shadow: 0 0 4px 0 #f8ed31; }
+>>>>>>> ...
