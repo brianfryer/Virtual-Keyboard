@@ -2,7 +2,6 @@ $(document).ready(function() {
 
     // When the document loads, find the textarea, save it, and give it focus
     var screen = $("#screen > textarea");
-    screen.focus();
 
     // On-screen keyboard mouse click
     $('li').not('.modifier, .short-key').on({
