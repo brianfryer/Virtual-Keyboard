@@ -120,40 +120,37 @@ li.double-character > span {
 li.double-character > span:last-of-type {
   font-size: 80%; }
 
-#backspace {
+li.backspace {
   width: 108px; }
 
-#tab {
+li.tab {
   width: 83px; }
 
-#backslash {
+li.backslash {
   width: 82px; }
 
-#caps-lock {
+li.caps-lock {
   width: 108px; }
 
-#enter {
+li.enter {
   width: 120px; }
 
-#left-shift {
+li.shift.left {
   width: 145px; }
 
-#right-shift {
+li.shift.right {
   width: 146px; }
 
-#left-ctrl,
-#right-ctrl {
+li.ctrl {
   width: 83px; }
 
-#left-alt,
-#right-alt {
+li.alt {
   width: 83px; }
 
-#left-windows-key,
-#right-windows-key {
+li.windows-key {
   width: 83px; }
 
-#space-bar {
+li.space-bar {
   width: 393px; }
 
 ul.toggle-css > li {
