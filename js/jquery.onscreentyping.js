@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // When the document loads, find the textarea, save it, and give it focus
-    var screen = $("#screen > textarea");
+    var screen = $(".screen > textarea");
 
     // On-screen keyboard mouse click
     $('li').not('.modifier, .short-key').on({
@@ -22,36 +22,21 @@ $(document).ready(function() {
             // Get the pressedKey
             key = getPressedKey(event);
             // Make the on-screen key flash for 100ms
-            switch(key) {
-                case isNumber(key):
-                    $('#num' + key).addClass('hover');
-                default:
-                    $('#' + key).addClass('hover');
+            if (isNumber(key)) {
+                $('.num' + key).addClass('hover');
+            } else if ($.inArray('modifier', key)) {
+                // ... Make the on-screen key flash for 100ms
+                $('.' + key[0]).addClass('hover');
+            } else {
+                $('.' + key).addClass('hover');
             }
-            // If the pressed key is...
-            switch(key) {
-                case 'shift':
-                    // Make the letters uppercase
-                    $('.keys').addClass('uppercase');
-                    // Make both shift keys flash
-                    $('#left-shift, #right-shift').addClass('hover');
-                    break;
-                case 'ctrl':
-                    // Make both shift keys flash
-                    $('#left-ctrl, #right-ctrl').addClass('hover');
-                    break;
-                case 'alt':
-                    // Make both shift keys flash
-                    $('#left-alt, #right-alt').addClass('hover');
-                    break;
-            }
-            // Prevent auto-focus on textarea if shift, ctrl, alt, capslock, or esc is clicked
+            // Prevent auto-focus on textarea if capslock, ctrl, alt, capslock, or esc is clicked
             switch (key) {
-                case 'shift': case 'ctrl': case 'alt': case 'caps-lock': case 'escape':
+                case 'capslock': case 'ctrl': case 'alt': case 'caps-lock': case 'escape':
                 break;
                 default:
                     // Focus on the textarea
-                    $('#screen > textarea').focus();
+                    $('.screen > textarea').focus();
             }
         },
         // When a key is no longer pressed...
@@ -65,10 +50,10 @@ $(document).ready(function() {
 
             // If the key that is no longer pressed is...
             switch(key) {
-                case 'shift':
-                    // Remove the hover class from both shift keys
+                case 'capslock':
+                    // Remove the hover class from both capslock keys
                     setTimeout(function() {
-                        $('#left-shift, #right-shift').removeClass('hover');
+                        $('.capslock').removeClass('hover');
                     }, 100);
                     // Make the letters go back to lowercase
                     $('.keys').removeClass('uppercase');
@@ -76,28 +61,28 @@ $(document).ready(function() {
                 case 'ctrl':
                     // Remove the hover class from both ctrl keys
                     setTimeout(function() {
-                        $('#left-ctrl, #right-ctrl').removeClass('hover');
+                        $('.ctrl').removeClass('hover');
                     }, 100);
                     break;
                 case 'alt':
                     // Remove the hover class from both alt keys
                     setTimeout(function() {
-                        $('#left-alt, #right-alt').removeClass('hover');
+                        $('.alt').removeClass('hover');
                     }, 100);
                     break;
                 case 'escape':
                     setTimeout(function() {
-                        $('#escape').removeClass('hover');
+                        $('.escape').removeClass('hover');
                     }, 100);
                     break;
                 case 'caps-lock':
                     setTimeout(function() {
-                        $('#caps-lock').removeClass('hover');
+                        $('.caps-lock').removeClass('hover');
                     }, 100);
                     break;
                 case 'enter':
                     setTimeout(function() {
-                        $('#enter').removeClass('hover');
+                        $('.enter').removeClass('hover');
                     }, 100);
                     break;
             }
@@ -127,7 +112,10 @@ $(document).ready(function() {
         }
         // If the pressedKey is esc
         else if (pressedKey == 27) {
-            return 'escape';
+            var escapeKey = new Array(2);
+            escapeKey[0] = 'escape';
+            escapeKey[1] = 'modifier';
+            return escapeKey;
         }
         // If the pressedKey is an accent `
         else if (pressedKey == 192) {
@@ -155,7 +143,10 @@ $(document).ready(function() {
         }
         // If the pressedKey is an caps lock
         else if (pressedKey == 20) {
-            return 'caps-lock';
+            var capslockKey = new Array(2);
+            capslockKey[0] = 'capslock';
+            capslockKey[1] = 'modifier';
+            return capslockKey;
         }
         // If the pressedKey is semi-colon ;
         else if (pressedKey == 186) {
@@ -169,9 +160,12 @@ $(document).ready(function() {
         else if (pressedKey == 13) {
             return 'enter';
         }
-        // If the pressedKey is shift
+        // If the pressedKey is capslock
         else if (pressedKey == 16) {
-            return 'shift';
+            var capslockKey = new Array(2);
+            capslockKey[0] = 'capslock';
+            capslockKey[1] = 'modifier';
+            return capslockKey;
         }
         // If the pressedKey is a comma ,
         else if (pressedKey == 188) {
@@ -187,11 +181,17 @@ $(document).ready(function() {
         }
         // If the pressedKey is ctrl
         else if (pressedKey == 17) {
-            return 'ctrl';
+            var ctrlKey = new Array(2);
+            ctrlKey[0] = 'ctrl';
+            ctrlKey[1] = 'modifier';
+            return ctrlKey;
         }
         // If the pressedKey is alt
         else if (pressedKey == 18) {
-            return 'alt';
+            var altKey = new Array(2);
+            altKey[0] = 'alt';
+            altKey[1] = 'modifier';
+            return altKey;
         }
         // If the pressedKey doesn't match anything above, output to the console!
         else {
@@ -202,6 +202,11 @@ $(document).ready(function() {
     // Find out if the key is a number
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    // Find out if the key is a modifier
+    function isModifier(n) {
+
     }
 
 });
