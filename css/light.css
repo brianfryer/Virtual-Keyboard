@@ -1,7 +1,7 @@
 /* ==========================================================================
    Styling for Light Keyboard
    ========================================================================== */
-#keyboard {
+.keyboard {
   color: #666;
   background-color: #eeeeee;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));

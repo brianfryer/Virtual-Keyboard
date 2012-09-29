@@ -1,7 +1,7 @@
 /* ==========================================================================
    Styling for High-Contrast Keyboard
    ========================================================================== */
-#keyboard {
+.keyboard {
   color: #fff;
   background-color: #eeeeee;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));

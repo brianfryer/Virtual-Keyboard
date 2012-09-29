@@ -2,8 +2,7 @@
 @import "neat/neat";
 
 body {
-  /*font-family: $helvetica;*/
-  font-family: 'Source Sans Pro';
+  font-family: $helvetica;
   background-image: url('/virtual-keyboard/img/bg.png');
   background-position: top left;
   background-repeat: repeat;
@@ -14,10 +13,10 @@ body {
   max-width: 960px;
 }
 
-#screen {
+.screen {
   margin: 40px 0 10px;
 }
-#screen textarea {
+.screen textarea {
   width: 100%;
   max-width: 100%;
   min-height: 200px;
@@ -29,18 +28,18 @@ body {
   @include box-shadow(inset 0 0 10px 0 #999, 0 0 15px 0 #ccc);
 }
 
-#keyboard {
+.keyboard {
   @include pad(15px 15px 11px);
   border-radius: 8px;
   font-size: 120%;
 }
-#keyboard > ul {
+.keyboard > ul {
   margin: 0;
   padding: 0;
   list-style: none;
   @include clearfix;
 }
-#keyboard > ul > li {
+.keyboard > ul > li {
   line-height: 1;
 }
 

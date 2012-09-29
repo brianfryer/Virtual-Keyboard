@@ -4,7 +4,7 @@
    Styling for Dark Keyboard
    ========================================================================== */
 
-#keyboard {
+.keyboard {
   border-top: 1px solid #333;
   color: #fff;
   @include linear-gradient(#222, #0c0c0c);
