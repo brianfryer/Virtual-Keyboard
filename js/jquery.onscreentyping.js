@@ -21,28 +21,34 @@ $(document).ready(function() {
         // When a key is pressed ...
         'keydown': function(event) {
 
-            // ... get the pressedKey ...
+            // ... get the pressedKey.
             var pressedKey = getPressedKey(event);
+            var pressedKeyChar = pressedKey[0];
+            var pressedKeyType = pressedKey[1];
 
             // ... and make the key hover.
-            $('.' + pressedKey).addClass('hover');
+            $('.' + pressedKeyChar).not('.caps-lock').addClass('hover');
 
-            // If the pressedKey is NOT a modifier key ...
-            if ($.inArray('modifier', pressedKey) == -1) {
-                // ... focus on the textarea
-                $('.screen > textarea').focus();
+            if ((pressedKeyChar == 'caps-lock') && !$('.caps-lock').hasClass('hover')) {
+                $('.caps-lock').addClass('hover');
+                $('.keys').addClass('uppercase');
+            } else {
+                $('.caps-lock').removeClass('hover');
+                $('.keys').removeClass('uppercase');
             }
 
-            // If the pressedKey is caps-lock OR shift ...
-            if ($('.caps-lock').hasClass('hover') || $.inArray('"shift"', pressedKey)) {
-                // ... make the keys uppercase.
+            if (pressedKeyChar == 'shift') {
                 $('.keys').addClass('uppercase');
             }
 
-            // If the pressedKey is caps-lock AND shift...
-            if ($('.caps-lock').hasClass('hover') && $('.shift').hasClass('hover')) {
-                // ... make the keys lowercase.
+            if ((pressedKeyChar == 'shift') && $('.caps-lock').hasClass('hover')) {
                 $('.keys').removeClass('uppercase');
+            }
+
+            // If the pressedKey is NOT a modifier key ...
+            if (pressedKeyType !== 'modifier') {
+                // ... focus on the textarea,
+                $('.screen > textarea').focus();
             }
 
         },
@@ -52,6 +58,8 @@ $(document).ready(function() {
 
             // ... get the (un)pressedKey ...
             var pressedKey = getPressedKey(event);
+            var pressedKeyChar = pressedKey[0];
+            var pressedKeyType = pressedKey[1];
 
             // ... set a timer for 100ms (to make the key "flash") ...
             setTimeout(function() {
@@ -59,23 +67,13 @@ $(document).ready(function() {
                 // ... and remove the hover class from all non-modifier keys (this prevents "sticky hover").
                 $('*').not('.modifier').removeClass('hover');
 
-                // If the (un)pressedKey IS a modifier ...
-                if ($.inArray('modifier', pressedKey)) {
+                // If the (un)pressedKey IS a modifier, and is NOT caps-lock ...
+                if (pressedKeyType == 'modifier') {
                     // ... remove the hover class of just the modifier key.
-                    $('.' + pressedKey[0]).removeClass('hover');
+                    $('.' + pressedKeyChar).not('.caps-lock').removeClass('hover');
                 }
 
-                // If the (un)pressedKey is caps-lock OR shift ...
-                if ($('.caps-lock').hasClass('hover') || $.inArray('shift', pressedKey)) {
-                    // ... make the keys uppercase.
-                    $('.keys').addClass('uppercase');
-                }
 
-                // If caps-lock does NOT have the hover class ...
-                if (!$('.caps-lock').hasClass('hover')) {
-                    // ... make the keys lowercase.
-                    $('.keys').removeClass('uppercase');
-                }
 
             }, 100);
 
@@ -97,11 +95,17 @@ $(document).ready(function() {
 
         // If the keyCode is letter...
         if ((pressedKey >= 65) && (pressedKey <= 90)) {
-            return (String.fromCharCode(pressedKey).toLowerCase());
+            var letterKey = new Array(2);
+            letterKey[0] = String.fromCharCode(pressedKey).toLowerCase();
+            letterKey[1] = 'letter';
+            return letterKey;
         }
         // If the keyCode is a number...
         else if ((pressedKey >=48) && (pressedKey <= 57)) {
-            return 'num' + (String.fromCharCode(pressedKey));
+            var numKey = new Array(2);
+            numKey[0] = 'num' + String.fromCharCode(pressedKey);
+            numKey[1] = 'number';
+            return numKey;
         }
         // If the pressedKey is esc
         else if (pressedKey == 27) {
@@ -175,7 +179,10 @@ $(document).ready(function() {
         }
         // If the pressedKey is enter
         else if (pressedKey == 13) {
-            return 'enter';
+            var enterKey = new Array(2);
+            enterKey[0] = 'enter';
+            enterKey[1] = 'modifier';
+            return enterKey;
         }
         // If the pressedKey is shift
         else if (pressedKey == 16) {
@@ -220,7 +227,10 @@ $(document).ready(function() {
             return altKey;
         }
         else if (pressedKey == 32) {
-            return 'space-bar';
+            var spaceBarKey = new Array(2);
+            spaceBarKey[0] = 'space-bar';
+            spaceBarKey[1] = ' ';
+            return spaceBarKey;
         }
         // If the pressedKey doesn't match anything above, output to the console!
         else {
