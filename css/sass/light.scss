@@ -44,9 +44,9 @@ li.modifier,
 }
 
 li.marker:after {
-  border-top-color: #555;
-  border-bottom-color: #222;
-  @include box-shadow(0 0 4px #666);
+  border-top-color: #fff;
+  border-bottom-color: #bbb;
+  @include box-shadow(0 0 4px #bbb);
 }
 
 ul.toggle-css > li {

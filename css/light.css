@@ -43,10 +43,10 @@ li.modifier,
   color: #999; }
 
 li.marker:after {
-  border-top-color: #555;
-  border-bottom-color: #222;
-  -webkit-box-shadow: 0 0 4px #666666;
-  box-shadow: 0 0 4px #666666; }
+  border-top-color: #fff;
+  border-bottom-color: #bbb;
+  -webkit-box-shadow: 0 0 4px #bbbbbb;
+  box-shadow: 0 0 4px #bbbbbb; }
 
 ul.toggle-css > li {
   cursor: pointer;
