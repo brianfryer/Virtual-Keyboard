@@ -29,6 +29,16 @@ $(document).ready(function() {
             // make it hover (unless it's the caps-lock key).
             $('.' + pressedKeyChar).not('.caps-lock').addClass('hover');
 
+            if (pressedKeyType == 'letter') {
+                var options = {
+                    caps_lock_on: function() {
+                        $('.caps-lock').addClass('hover');
+                        $('.keys').addClass('uppercase');
+                    }
+                };
+                $(screen).capslock(options);
+            }
+
             // If the pressedKeyChar is caps-lock...
             if (pressedKeyChar == 'caps-lock') {
                 // ... make the caps-lock key hover.

@@ -20,6 +20,7 @@
         <!-- Toggle between different stylesheets -->
         <script src="js/jquery.csstoggle.js"></script>
         <!-- Input characters into the textarea when keys are clicked or pressed -->
+        <script src="js/jquery.capslock.js"></script>
         <script src="js/jquery.insertatcaret.js"></script>
         <script src="js/jquery.onscreentyping.js"></script>
 
@@ -35,96 +36,96 @@
         <section class="keyboard">
 
             <ul class="keys">
-                <li class="escape alpha modifier short-key gap">
+                <li class="escape alpha modifier gap">
                     <span>Esc</span>
                 </li>
-                <li class="f1 function short-key">
+                <li class="f1 function">
                     <span>F1</span>
                 </li>
-                <li class="f2 function short-key">
+                <li class="f2 function">
                     <span>F2</span>
                 </li>
-                <li class="f3 function short-key">
+                <li class="f3 function">
                     <span>F3</span>
                 </li>
-                <li class="f4 function short-key gap">
+                <li class="f4 function gap">
                     <span>F4</span>
                 </li>
-                <li class="f5 function short-key">
+                <li class="f5 function">
                     <span>F5</span>
                 </li>
-                <li class="f6 function short-key">
+                <li class="f6 function">
                     <span>F6</span>
                 </li>
-                <li class="f7 function short-key">
+                <li class="f7 function">
                     <span>F7</span>
                 </li>
-                <li class="f8 function short-key gap">
+                <li class="f8 function gap">
                     <span>F8</span>
                 </li>
-                <li class="f9 function short-key">
+                <li class="f9 function">
                     <span>F9</span>
                 </li>
-                <li class="f10 function short-key">
+                <li class="f10 function">
                     <span>F10</span>
                 </li>
-                <li class="f11 function short-key">
+                <li class="f11 function">
                     <span>F11</span>
                 </li>
-                <li class="f12 omega function short-key">
+                <li class="f12 omega function">
                     <span>F12</span>
                 </li>
                 <li class="accent tilde alpha double-character symbol">
-                    <span>&#96;</span>
-                    <span>&#126;</span>
+                    <span class="active">&#96;</span>
+                    <span class="inactive">&#126;</span>
                 </li>
                 <li class="num1 exclamation-mark double-character number symbol">
-                    <span>1</span>
-                    <span>&#33;</span>
+                    <span class="active">1</span>
+                    <span class="inactive">&#33;</span>
                 </li>
                 <li class="num2 at-symbol double-character number symbol">
-                    <span>2</span>
-                    <span>&#64;</span>
+                    <span class="active">2</span>
+                    <span class="inactive">&#64;</span>
                 </li>
                 <li class="num3 number-sign double-character number symbol">
-                    <span>3</span>
-                    <span>&#35;</span>
+                    <span class="active">3</span>
+                    <span class="inactive">&#35;</span>
                 </li>
                 <li class="num4 dollar-sign double-character number symbol">
-                    <span>4</span>
-                    <span>&#36;</span>
+                    <span class="active">4</span>
+                    <span class="inactive">&#36;</span>
                 </li>
                 <li class="num5 percent-sign double-character number symbol">
-                    <span>5</span>
-                    <span>&#37;</span>
+                    <span class="active">5</span>
+                    <span class="inactive">&#37;</span>
                 </li>
                 <li class="num6 caret double-character number symbol">
-                    <span>6</span>
-                    <span>&#94;</span>
+                    <span class="active">6</span>
+                    <span class="inactive">&#94;</span>
                 </li>
                 <li class="num7 ampersand double-character number symbol">
-                    <span>7</span>
-                    <span>&#38;</span>
+                    <span class="active">7</span>
+                    <span class="inactive">&#38;</span>
                 </li>
                 <li class="num8 asterisk double-character number symbol">
-                    <span>8</span>
-                    <span>&#42;</span>
+                    <span class="active">8</span>
+                    <span class="inactive">&#42;</span>
                 </li>
                 <li class="num9 opening-paren double-character number symbol">
-                    <span>9</span>
-                    <span>&#40;</span>
+                    <span class="active">9</span>
+                    <span class="inactive">&#40;</span>
                 </li>
                 <li class="num0 closing-paren double-character number symbol">
-                    <span>0</span>
-                    <span>&#41;</span>
+                    <span class="active">0</span>
+                    <span class="inactive">&#41;</span>
                 </li>
                 <li class="hyphen underscore double-character symbol">
-                    <span>&#45;</span>
-                    <span>&#95;</span>
+                    <span class="active">&#45;</span>
+                    <span class="inactive">&#95;</span>
                 </li>
                 <li class="equal plus double-character symbol">
-                    <span>&#61;</span>
-                    <span>&#43;</span>
+                    <span class="active">&#61;</span>
+                    <span class="inactive">&#43;</span>
                 </li>
                 <li class="backspace omega modifier">
                     <span>Backspace</span>
@@ -163,16 +164,16 @@
                     <span>p</span>
                 </li>
                 <li class="opening-bracket opening-brace double-character symbol">
-                    <span>&#91;</span>
-                    <span>&#123;</span>
+                    <span class="active">&#91;</span>
+                    <span class="inactive">&#123;</span>
                 </li>
                 <li class="closing-bracket closing-brace double-character symbol">
-                    <span>&#93;</span>
-                    <span>&#125;</span>
+                    <span class="active">&#93;</span>
+                    <span class="inactive">&#125;</span>
                 </li>
                 <li class="backslash vertical-bar omega double-character symbol">
-                    <span>&#92;</span>
-                    <span>&#124;</span>
+                    <span class="active">&#92;</span>
+                    <span class="inactive">&#124;</span>
                 </li>
                 <li class="caps-lock alpha modifier">
                     <span>Caps Lock</span>
@@ -205,12 +206,12 @@
                     <span>l</span>
                 </li>
                 <li class="semi-colon colon double-character symbol">
-                    <span>&#59;</span>
-                    <span>&#58;</span>
+                    <span class="active">&#59;</span>
+                    <span class="inactive">&#58;</span>
                 </li>
                 <li class="quote double-quote double-character symbol">
-                    <span>&#39;</span>
-                    <span>&#34;</span>
+                    <span class="active">&#39;</span>
+                    <span class="inactive">&#34;</span>
                 </li>
                 <li class="enter omega modifier">
                     <span>Enter</span>
@@ -240,16 +241,16 @@
                     <span>m</span>
                 </li>
                 <li class="comma less-than-sign double-character symbol">
-                    <span>&#44;</span>
-                    <span>&#60;</span>
+                    <span class="active">&#44;</span>
+                    <span class="inactive">&#60;</span>
                 </li>
                 <li class="period greater-than-sign double-character symbol">
-                    <span>&#46;</span>
-                    <span>&#62;</span>
+                    <span class="active">&#46;</span>
+                    <span class="inactive">&#62;</span>
                 </li>
                 <li class="forward-slash question-mark double-character symbol">
-                    <span>&#47;</span>
-                    <span>&#63;</span>
+                    <span class="active">&#47;</span>
+                    <span class="inactive">&#63;</span>
                 </li>
                 <li class="right shift omega modifier symbol">
                     <span>Shift</span>

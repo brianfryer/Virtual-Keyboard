@@ -37,8 +37,8 @@
   background-image: -o-linear-gradient(top, #484848, #3c3c3c);
   background-image: linear-gradient(top, #484848, #3c3c3c); }
 
-.keys > li > span {
-  text-shadow: 0 0 1px #111111, 0 0 2px #222222, 0 0 3px #333333; }
+span.active {
+  text-shadow: 0 0 1px #111; }
 
 .keys > li:hover:not(.function) > span,
 .keys > li.hover:not(.function) > span {
@@ -46,8 +46,11 @@
 
 li.short-key,
 li.modifier,
-.double-character > span:last-of-type {
+span.inactive {
   color: #999; }
+
+li:hover > span.inactive {
+  color: #666; }
 
 li.marker:after {
   border-top-color: #555;

@@ -43,12 +43,13 @@ body {
   line-height: 1;
 }
 
-ul.keys {
+.keys {
   font-weight: bold;
 }
-.keys.uppercase {
+.uppercase {
   text-transform: uppercase;
 }
+
 .keys > li {
   float: left;
   width: 57px;
@@ -57,18 +58,6 @@ ul.keys {
   border-radius: 5px;
   border: 1px solid transparent;
   border-left: none;
-}
-
-.keys > li:not(.function),
-.keys > li:not(.function) {
-  cursor: pointer;
-}
-
-li.function {
-  opacity: 0.5;
-}
-li.function > span {
-  cursor: default;
 }
 
 li.alpha {
@@ -81,29 +70,25 @@ li.omega {
 li.gap {
   margin-right: 41px;
 }
-li.short-key {
-  height: 40px;
+.keys > li:not(.function),
+.keys > li:not(.function) {
+  cursor: pointer;
 }
-li.short-key,
-li.modifier {
+li.function {
+  opacity: 0.5;
+  height: 40px;
   font-size: 60%;
 }
+li.function > span {
+  cursor: default;
+}
+
 li.modifier {
+  font-size: 60%;
   text-transform: capitalize;
 }
 
-.keys span {
-  display: block;
-  margin: 10px 0 0 13px;
-}
-
 li.double-character {
-  font-size: 80%;
-}
-li.double-character > span {
-  margin: 7px 0 0 9px;
-}
-li.double-character > span:last-of-type {
   font-size: 80%;
 }
 
@@ -120,6 +105,9 @@ li.marker:after {
   border-bottom: 1px solid transparent;
 }
 
+li.escape {
+  height: 40px;
+}
 li.backspace {
   width: 108px;
 }
@@ -152,6 +140,20 @@ li.windows-key {
 }
 li.space-bar {
   width: 393px;
+}
+
+.keys span {
+  display: block;
+  margin: 10px 0 0 13px;
+}
+li.double-character > span {
+  margin: 7px 0 0 9px;
+}
+span.active {
+
+}
+span.inactive {
+  font-size: 80%;
 }
 
 ul.toggle-css > li {

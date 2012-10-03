@@ -26,10 +26,11 @@
   @include linear-gradient(#484848, #3c3c3c);
 }
 
-.keys > li > span {
-  text-shadow: 0 0 1px #111,
-    0 0 2px #222,
-    0 0 3px #333;
+span.active {
+  text-shadow: 0 0 1px #111;
+}
+span.inactive {
+
 }
 .keys > li:hover:not(.function) > span,
 .keys > li.hover:not(.function) > span {
@@ -38,8 +39,12 @@
 
 li.short-key,
 li.modifier,
-.double-character > span:last-of-type {
+span.inactive {
   color: #999;
+}
+
+li:hover > span.inactive {
+  color: #666;
 }
 
 li.marker:after {
