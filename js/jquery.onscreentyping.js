@@ -81,23 +81,23 @@ $(document).ready(function() {
         'keyup': function(event) {
 
             // ... get the (un)pressedKey ...
-            var depressedKey = getPressedKey(event);
-            var depressedKeyChar = depressedKey[0];
-            var depressedKeyType = depressedKey[1];
+            var unpressedKey = getPressedKey(event);
+            var unpressedKeyChar = unpressedKey[0];
+            var unpressedKeyType = unpressedKey[1];
 
             // ... set a timer for 100ms (to make the key "flash") ...
             setTimeout(function() {
                 // ... and remove the hover class from all non-modifier keys (this prevents "sticky hover").
                 $('*').not('.modifier').removeClass('hover');
 
-                if (depressedKeyType == 'modifier' && depressedKeyChar !== 'caps-lock') {
-                    $('.' + depressedKeyChar).removeClass('hover');
+                if (unpressedKeyType == 'modifier' && unpressedKeyChar !== 'caps-lock') {
+                    $('.' + unpressedKeyChar).removeClass('hover');
                 }
 
             }, 100);
 
             // If the depressedKeyChar is shift...
-            if (depressedKeyChar == 'shift') {
+            if (unpressedKeyChar == 'shift') {
                 // ... and the caps-lock key has hover...
                 if ($('.caps-lock').hasClass('hover')) {
                     // ... make the letters uppercase.
