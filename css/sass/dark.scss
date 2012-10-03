@@ -42,6 +42,12 @@ li.modifier,
   color: #999;
 }
 
+li.marker:after {
+  border-top-color: #555;
+  border-bottom-color: #222;
+  @include box-shadow(0 0 4px #666);
+}
+
 ul.toggle-css > li {
   cursor: pointer;
   color: #555;

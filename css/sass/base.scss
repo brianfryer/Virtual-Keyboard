@@ -96,6 +96,7 @@ li.modifier {
   display: block;
   margin: 10px 0 0 13px;
 }
+
 li.double-character {
   font-size: 80%;
 }
@@ -104,6 +105,19 @@ li.double-character > span {
 }
 li.double-character > span:last-of-type {
   font-size: 80%;
+}
+
+li.marker {
+  position: relative;
+}
+li.marker:after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  right: 33%;
+  width: 19px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 li.backspace {

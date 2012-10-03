@@ -48,6 +48,12 @@ li.modifier,
 .double-character > span:last-of-type {
   color: #999; }
 
+li.marker:after {
+  border-top-color: #555;
+  border-bottom-color: #222;
+  -webkit-box-shadow: 0 0 4px #666666;
+  box-shadow: 0 0 4px #666666; }
+
 ul.toggle-css > li {
   cursor: pointer;
   color: #555;
