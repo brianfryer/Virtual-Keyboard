@@ -3,15 +3,73 @@ $(document).ready(function() {
 
     // ... find the textarea, save it, and give it focus.
     var screen = $(".screen > textarea");
+    screen.focus();
 
     // For on-screen keyboard mouse clicks:
-    $('li').not('.modifier, .short-key').on({
+    $('.keys > li').on({
+
         // When a key is clicked...
         'click': function() {
-            // ... get the clickedkey...
-            var clickedKey = getClickedKey(this); // I don't know why I need to pass 'this', and not 'event', into the function
-            // ... and insert its character in the textarea at the caret
-            screen.insertAtCaret(clickedKey);
+
+            // ... get the clickedKey.
+            var clickedKey = getClickedKey(this).replace(' ', '-');
+
+            // If the clickedKey is NOT a modifier...
+            if (!$(this).is('.modifier')) {
+                // If the clickedKey is a letter...
+                if ($(this).is('.letter')) {
+                    if ($('.caps-lock').is('.hover') && $('.shift').is('.hover') ) {
+                        screen.insertAtCaret(clickedKey.toLowerCase());
+                    }
+                    else if ($('.caps-lock, .shift').is('.hover')) {
+                        screen.insertAtCaret(clickedKey.toUpperCase());
+                    }
+                    else {
+                        screen.insertAtCaret(clickedKey);
+                    }
+                } else {
+                    screen.insertAtCaret(clickedKey);
+                }
+
+                if (!$('.caps-lock').is('hover')) {
+                    $('.keys').removeClass('uppercase');
+                }
+
+                // Always remove the hover effect from the shift key when a letter is pressed
+                $('.shift').removeClass('hover');
+
+            }
+
+            // If the clickedKey is a modifier...
+            if ($(this).is('.modifier')) {
+                $('.' + clickedKey.toLowerCase()).toggleClass('hover');
+            }
+
+            // If the clickedKey is shift...
+            if ($(this).is('.shift')) {
+                if ($('.caps-lock').is('hover')) {
+                    $('.keys').removeClass('uppercase');
+                } else if ($('.caps-lock').not('hover')) {
+                    $('.keys').toggleClass('uppercase');
+                }
+            }
+
+            // If the clickedKey is caps-lock...
+            if ($(this).is('.caps-lock')) {
+                if ($('.shift').is('hover')) {
+                    $('.keys').addClass('uppercase');
+                } else if ($('.shift').not('hover')) {
+                    $('.keys').toggleClass('uppercase');
+                }
+            }
+
+            // If the clickedKey is a tab...
+            if ($(this).is('.tab')) {
+                // ... insert a tab character at the caret.
+                screen.insertAtCaret('\t');
+                $('.tab').removeClass('hover');
+            }
+
         }
     });
 
@@ -36,7 +94,9 @@ $(document).ready(function() {
                         $('.keys').addClass('uppercase');
                     }
                 };
-                $(screen).capslock(options);
+                if (event.shiftKey == false) {
+                    $(screen).capslock(options);
+                }
             }
 
             // If the pressedKeyChar is caps-lock...
@@ -61,7 +121,7 @@ $(document).ready(function() {
                 }
             }
 
-            // If the pressedKey is not a modifier OR is the backspace key...
+            // If the pressedKey IS NOT a modifier OR IS the backspace key...
             if (pressedKeyType !== 'modifier' || pressedKeyChar == 'backspace') {
                 // focus on the textarea.
                 $('.screen > textarea').focus();
@@ -115,8 +175,8 @@ $(document).ready(function() {
 
     // Get the value of the key being clicked
     function getClickedKey(target) {
-        // Find the first <span>, get the contents, trim away the whitespace, and save it
-        clickedKey = $(target).find(':first-child').text().trim();
+        // Find the active <span>, get the contents, trim away the whitespace, and save it
+        clickedKey = $(target).find('.active').text().trim();
         return clickedKey;
     }
 
