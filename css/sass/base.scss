@@ -51,6 +51,7 @@ body {
 }
 
 .keys > li {
+  position: relative;
   float: left;
   width: 57px;
   height: 57px;
@@ -58,6 +59,10 @@ body {
   border-radius: 5px;
   border: 1px solid transparent;
   border-left: none;
+}
+.keys > li:active,
+li.hover {
+  top: 2px;
 }
 
 li.alpha {

@@ -16,6 +16,7 @@ $(document).ready(function() {
 
             // If the clickedKey is NOT a modifier...
             if (!$(this).is('.modifier')) {
+
                 // If the clickedKey is a letter...
                 if ($(this).is('.letter')) {
 
@@ -69,11 +70,13 @@ $(document).ready(function() {
 
             // If the clickedKey is caps-lock...
             if ($(this).is('.caps-lock')) {
+
                 if ($('.shift').is('hover')) {
                     $('.keys').addClass('uppercase');
                 } else if ($('.shift').not('hover')) {
                     $('.keys').toggleClass('uppercase');
                 }
+
             }
 
             // If the clickedKey is a tab...
@@ -116,7 +119,9 @@ $(document).ready(function() {
             if (pressedKeyChar == 'caps-lock') {
                 // ... make the caps-lock key hover.
                 $('.caps-lock').toggleClass('hover');
-                // ... make the letters uppercase;
+                // ... make the caps-lock key move down.
+                $('.caps-lock').css('top', '2px');
+                // ... make the letters uppercase.
                 $('.keys').toggleClass('uppercase');
             }
 
@@ -166,6 +171,8 @@ $(document).ready(function() {
                 if (unpressedKeyType == 'modifier' && unpressedKeyChar !== 'caps-lock') {
                     $('.' + unpressedKeyChar).removeClass('hover');
                 }
+
+                $('.caps-lock').css('top', '0');
 
             }, 100);
 
