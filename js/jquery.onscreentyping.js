@@ -33,30 +33,31 @@ $(document).ready(function() {
                         // ...insert the clickedKey at the caret.
                         screen.insertAtCaret(clickedKey);
                     }
-
-                    // If .caps-lock is .hover...
-                    if ($('.caps-lock').is('.hover')) {
-                        // ...make the .keys uppercase.
-                        $('.keys').addClass('uppercase');
-                    // If .caps-lock is not .hover...
-                    } else if ($('.caps-lock').not('.hover')) {
-                        // ...make the .keys lowercase.
-                        $('.keys').removeClass('uppercase');
-                    }
-
                 // Do this if the clickedKey is not a letter...
                 } else {
                     screen.insertAtCaret(clickedKey);
                 }
 
-                // Always remove the hover effect from the shift key when a letter is pressed
+                // If .caps-lock is .hover...
+                if ($('.caps-lock').is('.hover')) {
+                    // ...make the .keys uppercase.
+                    $('.keys').addClass('uppercase');
+                    // If .caps-lock is not .hover...
+                } else if ($('.caps-lock').not('.hover')) {
+                    // ...make the .keys lowercase.
+                    $('.keys').removeClass('uppercase');
+                }
+
+                // Always remove the hover effect from the shift key when a key is pressed
                 $('.shift').removeClass('hover');
 
             }
 
             // If the clickedKey is a modifier...
             if ($(this).is('.modifier')) {
+
                 $('.' + clickedKey.toLowerCase()).toggleClass('hover');
+
             }
 
             // If the clickedKey is shift...
@@ -70,13 +71,11 @@ $(document).ready(function() {
 
             // If the clickedKey is caps-lock...
             if ($(this).is('.caps-lock')) {
-
                 if ($('.shift').is('hover')) {
                     $('.keys').addClass('uppercase');
                 } else if ($('.shift').not('hover')) {
                     $('.keys').toggleClass('uppercase');
                 }
-
             }
 
             // If the clickedKey is a tab...
@@ -85,6 +84,22 @@ $(document).ready(function() {
                 screen.insertAtCaret('\t');
                 $('.tab').removeClass('hover');
             }
+
+            // If the clickedKey is the space-bar...
+            if ($(this).is('.space-bar')) {
+                // ... insert a tab character at the caret.
+                screen.insertAtCaret(' ');
+                $('.space-bar').removeClass('hover');
+            }
+
+            // If the clickedKey is the enter key...
+            if ($(this).is('.enter')) {
+                // ... insert a tab character at the caret.
+                screen.insertAtCaret('\n');
+                $('.enter').removeClass('hover');
+            }
+
+
 
         }
     });
@@ -103,6 +118,7 @@ $(document).ready(function() {
             // make it hover (unless it's the caps-lock key).
             $('.' + pressedKeyChar).not('.caps-lock').addClass('hover');
 
+            // If the pressedKey is a letter...
             if (pressedKeyType == 'letter') {
                 var options = {
                     caps_lock_on: function() {
@@ -110,7 +126,9 @@ $(document).ready(function() {
                         $('.keys').addClass('uppercase');
                     }
                 };
+                // ...and the shift key is not pressed...
                 if (event.shiftKey == false) {
+                    //
                     $(screen).capslock(options);
                 }
             }
@@ -315,7 +333,7 @@ $(document).ready(function() {
         else if (pressedKey == 8) {
             var backSpaceKey = new Array(2);
             backSpaceKey[0] = 'backspace';
-            backSpaceKey[1] = 'symbol';
+            backSpaceKey[1] = 'modifier';
             return backSpaceKey;
         }
         // If the pressedKey is tab

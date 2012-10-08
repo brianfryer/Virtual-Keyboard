@@ -78,8 +78,15 @@ body {
   border: 1px solid transparent;
   border-left: none; }
 
-.keys > li:active,
 li.hover {
+  top: 2px; }
+
+li.caps-lock.hover,
+li.backspace.hover,
+li.enter.hover {
+  top: 0; }
+
+.keys > li:active {
   top: 2px; }
 
 li.alpha {
@@ -90,18 +97,6 @@ li.omega {
 
 li.gap {
   margin-right: 41px; }
-
-.keys > li:not(.function),
-.keys > li:not(.function) {
-  cursor: pointer; }
-
-li.function {
-  opacity: 0.5;
-  height: 40px;
-  font-size: 60%; }
-
-li.function > span {
-  cursor: default; }
 
 li.modifier {
   font-size: 60%;
