@@ -18,21 +18,34 @@ $(document).ready(function() {
             if (!$(this).is('.modifier')) {
                 // If the clickedKey is a letter...
                 if ($(this).is('.letter')) {
+
+                    // If .caps-lock is .hover AND .shift is .hover ...
                     if ($('.caps-lock').is('.hover') && $('.shift').is('.hover') ) {
+                        // ...make the clickedKey lowercase, and insert it at the caret.
                         screen.insertAtCaret(clickedKey.toLowerCase());
-                    }
-                    else if ($('.caps-lock, .shift').is('.hover')) {
+                    // If .caps-lock, or .shift is .hover...
+                    } else if ($('.caps-lock, .shift').is('.hover')) {
+                        // ...make the clickedKey uppercase, and insert it at the caret.
                         screen.insertAtCaret(clickedKey.toUpperCase());
-                    }
-                    else {
+                    // ...otherwise,
+                    } else {
+                        // ...insert the clickedKey at the caret.
                         screen.insertAtCaret(clickedKey);
                     }
+
+                    // If .caps-lock is .hover...
+                    if ($('.caps-lock').is('.hover')) {
+                        // ...make the .keys uppercase.
+                        $('.keys').addClass('uppercase');
+                    // If .caps-lock is not .hover...
+                    } else if ($('.caps-lock').not('.hover')) {
+                        // ...make the .keys lowercase.
+                        $('.keys').removeClass('uppercase');
+                    }
+
+                // Do this if the clickedKey is not a letter...
                 } else {
                     screen.insertAtCaret(clickedKey);
-                }
-
-                if (!$('.caps-lock').is('hover')) {
-                    $('.keys').removeClass('uppercase');
                 }
 
                 // Always remove the hover effect from the shift key when a letter is pressed
@@ -302,7 +315,7 @@ $(document).ready(function() {
         else if (pressedKey == 9) {
             var tabKey = new Array(2);
             tabKey[0] = 'tab';
-            tabKey[1] = 'symbol';
+            tabKey[1] = 'modifier';
             return tabKey;
         }
         // If the pressedKey is escape
