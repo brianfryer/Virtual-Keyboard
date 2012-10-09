@@ -143,14 +143,16 @@ li.space-bar {
 }
 
 .keys span {
+  cursor: default;
   display: block;
   margin: 10px 0 0 13px;
 }
-li.double-character > span {
+li.double-character span {
+  position: absolute;
   margin: 7px 0 0 9px;
 }
-span.active {
-
+li.double-character span.active {
+  top: 23px;
 }
 span.inactive {
   font-size: 80%;
